@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Book Appoitments doctors" />
+    <meta name="description" content="" />
+    <script
+      src="https://kit.fontawesome.com/5bd9d0ce45.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Appointments</title>
+    <link rel="stylesheet" href="/css/appointindex.css" />
+  </head>
+  <body>
+    <!-- Header  -->
+
+    <!-- Header  -->
+
+    <!-- Doctors profiles -->
+<div class="wholeAppContainer">
+    <div class="dprofiles2 container">
+      <div class="dhead2">
+        <div class="profimg2">
+          <img src="/img/docImg.avif" alt="DOCTOR PROFILE" />
+        </div>
+        <div class="desc2">
+            <div class="drinfo">
+          <h3>Dr. Rama Joshi</h3>
+          <span class="education">Oncology | Gynaecologic Oncology.</span>
+          <span class="education"
+            ><i class="fa-solid fa-language"></i> &nbsp; English, Hindi,
+            Marathi</span
+          >
+        </div>
+        </div>
+      </div>
+
+      <!-- profo1 -->
+
+      <div class="prof2">
+        <div class="details2">
+          <h3>Dr. Rama Joshi</h3>
+          <h5>Oncology | Gynaecologic Oncology.</h5>
+          <span> MBBS (Gold Medalist); MS (Oncology);</span>
+          <span
+            ><i class="fa-solid fa-money-bill"></i>&nbsp; ₹ 1500 at clinic</span
+          >
+          <span>
+            <i class="fa-solid fa-location-dot fa-flip"></i> &nbsp; no 212/1b plot, Waves Survey, no. 59, C Ln, Kalyani Nagar, Pune, Maharashtra 411006
+          
+          <p>
+            <i class="fa-solid fa-calendar-days"></i> Available today
+            :&nbsp;<span>Afternoon</span>
+          </p>
+        </div>
+        <div class="d-btn2">
+          <!-- Doctor call details modal  -->
+          <!-- doctor call modal start  -->
+
+          <div class="overlay hidden"></div>
+          <button type="button" class="connect2 call-btn2 btn-open">
+            Call Doctor
+          </button>
+
+          <section class="modal2 hidden">
+            <div class="flex">
+              <img
+                src="/img/docImg.avif"
+                width="50px"
+                height="50px"
+                alt="user"
+              />
+              <button class="btn-close">⨉</button>
+            </div>
+            <div>
+              <h3>Dr.Shubha Kumari</h3>
+              <p>General Surgeon | MBBS, MS - General Surgery</p>
+            </div>
+
+            <div class="div-call" id="callButton">
+              Contact Number : 8877319623
+            </div>
+          </section>
+
+          <!-- <button class="div-call btn-open">Open modal2</button>
+                    -->
+          <!-- call modal end  -->
+
+          <!-- Doctor appointment details modal  -->
+          <div class="overlay hidden"></div>
+          <button type="button" class="connect2 appo-btn2" id="myBtn">
+            Book Appointment
+          </button>
+
+          <!-- modal section start appointment  -->
+
+          <!-- The Modal appointment -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close appo-close">&times;</span>
+                <h1>Book Appointment <span>Now</span></h1>
+                <h3>Consult and Book appointments with doctors</h3>
+              </div>
+
+              <!-- apoointment form  -->
+            <div class="appointmentForm">
+              <form action="/appointment" method="POST">
+                <div class="modal-body">
+                  <label for="name"> <h5>Name</h5> </label>
+                  <input
+                    type="text"
+                    placeholder="Enter name"
+                    id="name"
+                    name="name"
+                  />
+                  <label for="phone-number"> <h5>Phone</h5> </label>
+                  <input
+                    type="number"
+                    placeholder="Enter mobile number"
+                    id="phone-number"
+                    name="phone"
+                  />
+                  <label for="age"> <h5>Age</h5> </label>
+                  <input
+                    type="number"
+                    placeholder="Enter age"
+                    id="age"
+                    name="age"
+                  />
+                  <label for="gender"> <h5>Gender</h5> </label>
+                  <select name="gender" id="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                  </select>
+
+                  <label for="disease-name"> <h5>Medical Condition</h5> </label>
+                  <input
+                    type="text"
+                    placeholder="Disease name"
+                    id="disease-name"
+                    name="disease"
+                  />
+                  <label for="date"> <h5>Appointment Date & Time</h5> </label>
+                  <input
+                    type="datetime-local"
+                    placeholder="Choose Date & Time"
+                    id="date"
+                    name="date"
+                  />
+                  <label for="disease-d"> <h5>Disease Discription</h5> </label>
+                  <textarea
+                    placeholder="Write about your disease symptoms & give discription"
+                    id="disease-d"
+                    name="discription"
+                  ></textarea>
+                </div>
+
+                <!-- Book Appointment btn  -->
+                <div class="modal-footer">
+                  <input
+                    type="submit"
+                    class="appo-submit"
+                    value="Book Appointment "
+                  />
+                </div>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  doctors profile section end  -->
+
+    <!-- Help Form -->
+    <div class="helpform2">
+      <!-- form head  -->
+      <a href="#hform_name">
+        <div class="formhead2 fhead2">
+          <h1 class="mb-2"><span>FREE Consultation</span> for Patients</h1>
+          <p>If anyone wants Free Consultation can Contact</p>
+          <img src="/img/doctor-serve2.gif" alt="Ask Your Doubt" />
+        </div>
+      </a>
+
+      <!-- form box  -->
+      <!-- consultation form  -->
+
+      <div class="help2" id="consultation-form">
+        <div class="hform2">
+          <h1>Need more help</h1>
+          <h3>Book a FREE Consultation Now</h3>
+        </div>
+        <div class="formCont">
+        <form action="/consultation" method="post">
+          <div class="hform2">
+            <label for="hform_name"> <h5>Name</h5> </label>
+            <input
+              type="text"
+              placeholder="Patient Name"
+              id="hform_name"
+              name="name"
+            />
+          </div>
+          <div class="hform2">
+            <label for="hform_number"> <h5>Phone</h5> </label>
+
+            <input
+              type="number"
+              placeholder="Mobile Number"
+              id="hform_number"
+              name="phone"
+            />
+          </div>
+          <div class="hform2">
+            <label for="hform_city"><h5>City</h5> </label>
+            <input
+              type="text"
+              placeholder="Enter City"
+              id="hform_city"
+              name="city"
+            />
+          </div>
+          <div class="hform2">
+            <label for="hform_Disease"><h5>Medical Condition</h5> </label>
+            <input
+              type="text"
+              placeholder="Enter Disease"
+              id="hform_Disease"
+              name="disease"
+            />
+          </div>
+          <div class="hform2 helpbtn2">
+            <a href>
+              <button type="submit" value="Submit">Get Help Now</button>
+            </a>
+          </div>
+        </form>
+    </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+</div>
+    <script src="/js/appointindex.js"></script>
+  </body>
+</html>

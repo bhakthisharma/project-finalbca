@@ -1,0 +1,266 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClinicFlow</title>
+    <link
+      rel="shortcut icon"
+      href="/img/logo-cflow-removebg-preview.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/homeindex.css" />
+    <script defer src="/js/navbar.js"></script>
+  </head>
+  <body>
+    <div class="main-container5">
+      <header>
+        <nav class="navbar navbar-container">
+          <a href="/">
+            <div class="brand5">
+              <img
+                src="/img/logo-cflow-removebg-preview.png"
+                alt="logo"
+                width="80"
+                height="50"
+              />
+              <h1 class="logo5"><span>ClinicFlow</span></h1>
+            </div>
+          </a>
+          <div class="navbar__menu">
+            <ul class="navbar__list">
+              <li><a href="/">Home</a></li>
+              <% if (currentUser.isAuthenticated && currentUser.role =="admin" )
+              { %>
+
+              <li class="navbar__list-drop">
+                <p>
+                  Dashboard
+                  <svg
+                    class="arrow"
+                    width="10"
+                    height="6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="#686868"
+                      stroke-width="1.5"
+                      fill="none"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </p>
+                <ul class="navbar__list-drop-menu features">
+                  <li><a href="/dashboard/doctor">Doctor</a></li>
+                  <li><a href="/dashboard/patient">Patient</a></li>
+                </ul>
+              </li>
+              <% } %>
+              
+
+              <li class="navbar__list-drop">
+                <p>
+                  Appointments
+                  <svg
+                    class="arrow"
+                    width="10"
+                    height="6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="#686868"
+                      stroke-width="1.5"
+                      fill="none"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </p>
+                <ul class="navbar__list-drop-menu company">
+                  <li><a href="/appointments/book">Book Appointment</a></li>
+                </ul>
+              </li>
+
+             <% if (!currentUser.isAuthenticated || currentUser.role
+              =="patient" ) { %>
+              <li class="navbar__list-drop">
+                <p>
+                  Doctor
+                  <svg
+                    class="arrow"
+                    width="10"
+                    height="6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="#686868"
+                      stroke-width="1.5"
+                      fill="none"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </p>
+                <ul class="navbar__list-drop-menu features">
+                  <li><a href="/doctor/profile">Doctor profile</a></li>
+                </ul>
+              </li>
+              <% } %> <% if (currentUser.isAuthenticated && currentUser.role
+              =="doctor" ) { %>
+
+              <li><a href="/dashboard/doctor">Doctor</a></li>
+              <% } %> <% if (currentUser.isAuthenticated && (currentUser.role
+              =="admin" || currentUser.role =="doctor") ) { %>
+              <li class="navbar__list-drop">
+                <p>
+                  Medical Records
+                  <svg
+                    class="arrow"
+                    width="10"
+                    height="6"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="#686868"
+                      stroke-width="1.5"
+                      fill="none"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                </p>
+                <ul class="navbar__list-drop-menu features">
+                  <li><a href="/dashboard/patient">Patient Records</a></li>
+                </ul>
+              </li>
+              <% } %>
+            </ul>
+
+            <div class="navbar__buttons">
+              <% if (currentUser.isAuthenticated) { %>
+              <p class="username"><%=currentUser.name %></p>
+              <% } %> <% if (!currentUser.isAuthenticated) { %>
+              <a class="navbar__buttons-register" href="/signin">Signin</a>
+              <% } else { %>
+              <a class="navbar__buttons-register" href="/logout">Logout</a>
+              <% } %>
+            </div>
+          </div>
+          <div class="demo">
+            <div id="menu-icon" class="menu">
+              <span class="bar1"></span>
+              <span class="bar2"></span>
+              <span class="bar3"></span>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main><%- body -%></main>
+
+      <div class="footer5">
+        <!-- Footer Section -->
+        <div class="top-foot5">
+          <!-- Top Footer Section -->
+          <div class="newlearning-footer-head5">
+            <!-- New Learning Footer Header -->
+            <div class="newlearning-footer5">
+              <!-- New Learning Footer Logo and Title -->
+              <img
+                src="/img/logo-cflow-removebg-preview.png"
+                alt="Logo"
+                height="30"
+                width="60"
+              />
+              <h2>Clinicflow</h2>
+            </div>
+            <div class="callchat-center5">
+              <!-- Call and Chat Center Information -->
+              <p>Call center 574-583-5748</p>
+              <p>Chat center 382-439-4922</p>
+            </div>
+          </div>
+          <div class="links5">
+            <!-- Footer Links Section -->
+            <div class="courses-connecthere5">
+              <h3>About</h3>
+              <a href>Partners</a>
+              <a href>Careers</a>
+              <a href>Press</a>
+              <a href>Community</a>
+            </div>
+            <!-- Repeat the same structure for other link sections -->
+            <div class="updates-bookmarks5">
+              <h3>Notifications</h3>
+              <a href>Appointment alerts</a>
+              <a href>Service Alerts</a>
+
+              <a href>Updates</a>
+              <a href>Secutiry Notices</a>
+              <a href>Billing Alerts</a>
+            </div>
+            <div class="helpcenter-contactus5">
+              <h3>Location</h3>
+
+              <a href>Clinicflow-Nevada</a>
+              <a href>Verginia</a>
+              <a href>Kentuky</a>
+            </div>
+            <div class="quicklinks5">
+              <h3>Quick links</h3>
+              <a href>Bookmarks</a>
+              <a href>Feedback </a>
+
+              <a href="/appointments/book">Help center</a>
+              <a href="/contact">Contact us</a>
+            </div>
+          </div>
+        </div>
+        <div class="mid-foot5">
+          <!-- Middle Footer Section -->
+          <div class="newsletter5">
+            <!-- Newsletter Section -->
+            <h3>Newsletter :</h3>
+            <div class="Upgradenow-nextsymbol5">
+              <input
+                class="newsletter-input5"
+                type="text"
+                placeholder="Your Email"
+              />
+              <img
+                src="/img/arrow-orange.svg"
+                alt="right-arrow"
+                width="30"
+                height="30"
+              />
+            </div>
+          </div>
+
+          <div class="socials5">
+            <!-- Socials Section -->
+            <h3>Socials :</h3>
+            <div class="social-media5">
+              <img
+                src="/img/instagram-icon.svg"
+                alt="right-arrow"
+                width="30"
+                height="30"
+              />
+              <img
+                src="/img/linkedin-icon.svg"
+                alt="right-arrow"
+                width="30"
+                height="30"
+              />
+              <img
+                src="/img/twitter-icon.svg"
+                alt="right-arrow"
+                width="30"
+                height="30"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
