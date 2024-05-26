@@ -59,6 +59,34 @@ app.post("/student", async (req, res) => {
 });
 
 app.get("/student/:id", async (req, res) => {
+  console.log("Hi");
+  try {
+    const student = await Student.findOne({ _id: req.params.id });
+    if (student) {
+      res.status(200).send({
+        status: "success",
+        message: "Student retrieved",
+        data: student,
+      });
+    } else {
+      res.status(404).send({
+        status: "error",
+        message: "Student not found",
+        data: null,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).send({
+      status: "error",
+      message: "Internal Server Error",
+      data: null,
+    });
+  }
+});
+
+app.get("/student/:id", async (req, res) => {
   try {
     const studentId = req.params.id;
     const student = await Student.findOne({ _id: studentId });
@@ -80,7 +108,9 @@ app.get("/student/:id", async (req, res) => {
 
 app.put("/student/:id", async (req, res) => {
   try {
-    const student = await Student.findByIdAndUpdate(req.params.id, { ...req.body });
+    const student = await Student.findByIdAndUpdate(req.params.id, {
+      ...req.body,
+    });
     res.status(200).send({
       status: "success",
       message: "Student updated",
